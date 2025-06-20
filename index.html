@@ -10,8 +10,8 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #25D366;
-      color: #fff;
+      background-color: #e0f8e9; /* Verde claro similar a WhatsApp */
+      color: #000;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -24,86 +24,15 @@
     }
 
     .logo-text {
-      color: #fff;
+      color: #075e54;
       font-weight: 700;
       font-size: 24px;
-    }
-
-    hr {
-      width: 100%;
-      border: none;
-      border-top: 1px solid #fff;
-      margin: 20px 0;
-    }
-
-    .verified img {
-      width: 100px;
-      border-radius: 50%;
-      margin: 20px 0;
-    }
-
-    .verified h2 {
-      font-size: 20px;
-      margin: 10px 0;
-    }
-
-    .verified .green {
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .message {
-      background: #128C7E;
-      padding: 15px;
-      border-radius: 10px;
-      margin: 20px 0;
-      font-size: 16px;
-    }
-
-    .whatsapp-button {
-      background-color: #fff;
-      color: #25D366;
-      padding: 18px 30px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      font-size: 18px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .whatsapp-button i {
-      margin-right: 10px;
-      font-size: 24px;
-    }
-
-    .clientes, .trustpilot, .footer {
-      background-color: #075E54;
-      padding: 12px 20px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      color: #fff;
-      text-align: center;
-      font-weight: bold;
-      font-size: 14px;
     }
 
     .notification-container {
       position: fixed;
       bottom: 100px;
-      left: 10px;
+      left: 20px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -111,15 +40,14 @@
     }
 
     .notification {
-      background-color: #fff;
-      color: #000;
-      padding: 10px;
+      background: #ffffff;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
       border-radius: 10px;
       display: flex;
       align-items: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      animation: fadeInOut 10s infinite;
-      width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.5s ease-in-out;
     }
 
     .notification img {
@@ -129,11 +57,9 @@
       margin-right: 10px;
     }
 
-    @keyframes fadeInOut {
-      0% { opacity: 0; transform: translateY(20px); }
-      10% { opacity: 1; transform: translateY(0); }
-      90% { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(-20px); }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
     }
   </style>
 </head>
@@ -142,73 +68,38 @@
     <div class="logo-text">WhatsApp Bonos</div>
   </header>
 
-  <hr />
-
-  <section class="verified">
-    <a href="https://wa.me/5491131630026" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
-    </a>
-    <h2><b>Plataforma Verificada</b> ✅</h2>
-    <p class="green">Casino de Confianza</p>
-  </section>
-
-  <div class="message">
-    Te estamos conectando con nuestro equipo vía WhatsApp.
-  </div>
-
-  <a class="whatsapp-button pulse" href="https://wa.me/5491131630026?text=Quiero%20el%20bono%20del%2020%25" target="_blank">
-    <i class="fab fa-whatsapp"></i> ¡QUIERO MI USUARIO!
-  </a>
-
-  <div class="clientes">
-    👥 +5.000 CLIENTES GANANDO todos los días
-  </div>
-
-  <div class="trustpilot">
-    "Excelente" ⭐⭐⭐⭐⭐ Calificación 4.9/5 en Trustpilot<br />
-    <img src="https://logowik.com/content/uploads/images/trustpilot-stars9095.jpg" alt="Trustpilot" />
-  </div>
-
-  <div class="footer">
-    🎁 BONO DEL 20% CON TU PRIMER CARGA 🎁 - ¡Solicítalo ahora por WhatsApp!
-  </div>
-
   <div class="notification-container" id="notificationContainer"></div>
 
   <script>
-    const users = [
-      { name: "Lucía - Buenos Aires", img: "https://randomuser.me/api/portraits/women/1.jpg" },
-      { name: "Marcos - Córdoba", img: "https://randomuser.me/api/portraits/men/2.jpg" },
-      { name: "Ana - Mendoza", img: "https://randomuser.me/api/portraits/women/3.jpg" },
-      { name: "Julián - Rosario", img: "https://randomuser.me/api/portraits/men/4.jpg" },
-      { name: "Valentina - Salta", img: "https://randomuser.me/api/portraits/women/5.jpg" },
-      { name: "Diego - La Plata", img: "https://randomuser.me/api/portraits/men/6.jpg" },
-      { name: "Camila - Mar del Plata", img: "https://randomuser.me/api/portraits/women/7.jpg" },
-      { name: "Esteban - Chaco", img: "https://randomuser.me/api/portraits/men/8.jpg" },
-      { name: "Flor - Tucumán", img: "https://randomuser.me/api/portraits/women/9.jpg" },
-      { name: "Gonzalo - Neuquén", img: "https://randomuser.me/api/portraits/men/10.jpg" },
+    const notifications = [
+      { name: "Lucía de Córdoba", img: "https://randomuser.me/api/portraits/women/1.jpg" },
+      { name: "Martín de Salta", img: "https://randomuser.me/api/portraits/men/2.jpg" },
+      { name: "Camila de Mendoza", img: "https://randomuser.me/api/portraits/women/3.jpg" },
+      { name: "Federico de Rosario", img: "https://randomuser.me/api/portraits/men/4.jpg" },
+      { name: "Sofía de La Plata", img: "https://randomuser.me/api/portraits/women/5.jpg" },
+      { name: "Agustín de Tucumán", img: "https://randomuser.me/api/portraits/men/6.jpg" },
+      { name: "Valentina de San Juan", img: "https://randomuser.me/api/portraits/women/7.jpg" },
+      { name: "Diego de Santa Fe", img: "https://randomuser.me/api/portraits/men/8.jpg" },
+      { name: "Julieta de Mar del Plata", img: "https://randomuser.me/api/portraits/women/9.jpg" },
+      { name: "Ramiro de Neuquén", img: "https://randomuser.me/api/portraits/men/10.jpg" }
     ];
 
+    let current = 0;
     const container = document.getElementById('notificationContainer');
-    let index = 0;
 
     function showNotification() {
-      const user = users[index];
-      const notification = document.createElement('div');
-      notification.className = 'notification';
-      notification.innerHTML = `
-        <img src="${user.img}" alt="Foto de ${user.name}" />
-        <span>${user.name} recibió su bono 🎉</span>
-      `;
-
-      container.innerHTML = '';
-      container.appendChild(notification);
-
-      index = (index + 1) % users.length;
+      const data = notifications[current];
+      const div = document.createElement('div');
+      div.className = 'notification';
+      div.innerHTML = `<img src="${data.img}" alt="${data.name}" /><span>${data.name} recibió su premio 🎉</span>`;
+      container.appendChild(div);
+      setTimeout(() => {
+        container.removeChild(div);
+      }, 5000);
+      current = (current + 1) % notifications.length;
     }
 
-    setInterval(showNotification, 5000);
-    showNotification();
+    setInterval(showNotification, 3000);
   </script>
 </body>
 </html>
