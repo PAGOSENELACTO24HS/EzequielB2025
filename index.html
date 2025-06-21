@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -22,162 +22,251 @@
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1375338700359986&ev=PageView&noscript=1"/>
+      src="https://www.facebook.com/tr?id=1375338700359986&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #e5f6ea;
-      color: #075e54;
-      height: 100vh;
+      background-color: #e5fdf4;
+      color: #000;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      position: relative;
+      padding: 20px;
     }
 
-    .whatsapp-center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    header {
+      margin-top: 30px;
+      text-align: center;
     }
 
     .logo-text {
-      color: #25D366;
+      color: #075e54;
       font-weight: 700;
       font-size: 24px;
-      margin-top: 20px;
     }
 
-    .whatsapp-logo {
-      width: 80px;
-      height: 80px;
+    hr {
+      width: 100%;
+      border: none;
+      border-top: 1px solid #a2d5c6;
+      margin: 20px 0;
+    }
+
+    .verified {
+      text-align: center;
+    }
+
+    .verified img {
+      width: 100px;
+      border-radius: 50%;
+      margin: 20px 0;
+    }
+
+    .verified h2 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .verified .green {
+      color: #128c7e;
+      font-weight: 600;
+    }
+
+    .message {
+      background: #c0f2dc;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-size: 16px;
+      color: #000;
+    }
+
+    .whatsapp-button {
+      background-color: #25D366;
+      color: #fff;
+      padding: 18px 30px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 18px;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      min-width: 250px;
+      animation: glow 1.8s ease-in-out infinite;
+    }
+
+    .whatsapp-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1ebe5d;
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
       transition: transform 0.3s ease;
     }
 
-    .whatsapp-logo:hover {
-      transform: scale(1.1);
+    .whatsapp-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px #25D366, 
+                  0 0 25px rgba(37, 211, 102, 0.6),
+                  0 0 35px rgba(37, 211, 102, 0.3);
     }
 
-    .notifications {
-      position: fixed;
-      left: 20px;
-      bottom: 90px;
-      width: 280px;
-      background-color: #ffffff;
-      color: #075e54;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      font-size: 14px;
-      z-index: 9999;
-      display: none;
-      animation: fadeIn 0.5s ease-out;
+    .whatsapp-button:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
     }
 
-    .notification-item {
-      display: flex;
-      align-items: center;
-      padding: 10px;
+    .whatsapp-button:active {
+      transform: translateY(1px);
     }
 
-    .notification-item img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+    .whatsapp-button i {
       margin-right: 10px;
+      font-size: 24px;
     }
 
-    .notification-time {
-      display: block;
-      font-size: 12px;
-      color: #999;
-      margin-top: 4px;
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px #25D366, 0 0 20px #25D366, 0 0 30px #25D366;
+      }
+      50% {
+        box-shadow: 0 0 20px #1ebe5d, 0 0 30px #1ebe5d, 0 0 40px #1ebe5d;
+      }
+      100% {
+        box-shadow: 0 0 10px #25D366, 0 0 20px #25D366, 0 0 30px #25D366;
+      }
+    }
+
+    .clientes {
+      background-color: #a2d5c6;
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .trustpilot {
+      font-size: 14px;
+      padding: 8px 15px;
+      border: 1px dashed #5d9c8a;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #075e54;
+    }
+
+    .trustpilot img {
+      margin-top: 5px;
+      max-width: 120px;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to right, #128c7e, #25D366);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 14px;
     }
 
     @media (max-width: 600px) {
-      .notifications {
-        left: 10px;
-        width: 90%;
+      .whatsapp-button {
+        font-size: 16px;
+        padding: 16px 25px;
+        min-width: 220px;
       }
-
-      .whatsapp-logo {
-        width: 60px;
-        height: 60px;
+      .clientes {
+        font-size: 14px;
+        padding: 12px 18px;
+      }
+      .message {
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="whatsapp-center">
+  <header>
+    <div class="logo-text">LINEA 24HS</div>
+  </header>
+
+  <hr />
+
+  <section class="verified">
     <a href="https://wa.me/5491131630026" target="_blank" onclick="fbq('trackCustom', 'ClickWhatsApp')">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-logo" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="50" height="50" />
     </a>
-    <div class="logo-text">WhatsApp Bonos</div>
+    <h2> <b>Plataforma Verificada</b> ✅</h2>
+    <p class="green">Casino de Confianza</p>
+  </section>
+
+  <div class="message">
+    Te estamos conectando con nuestro equipo vía WhatsApp.
   </div>
 
-  <!-- Notificación -->
-  <div class="notifications" id="notificationBox"></div>
+  <a class="whatsapp-button"
+     href="https://wa.me/5491131630026?text=Quiero%20el%20bono%20del%2020%25"
+     target="_blank"
+     onclick="fbq('trackCustom', 'ClickWhatsApp')">
+    <i class="fab fa-whatsapp"></i> ¡QUIERO MI USUARIO!
+  </a>
+
+  <div class="clientes">
+    👥 5.000 CLIENTES GANANDO todos los días
+  </div>
+
+  <div class="trustpilot">
+    "Excelente" ⭐⭐⭐⭐⭐ Calificación 4.9/5 en Trustpilot<br/>
+    <img src="https://logowik.com/content/uploads/images/trustpilot-stars9095.jpg" alt="Trustpilot" />
+  </div>
+
+  <div class="footer">
+    🎁 BONO DEL 20% EN TU PRIMER CARGA - ¡Solicítalo ahora por WhatsApp!
+  </div>
 
   <script>
-    const users = [
-      { name: "Lucía", city: "Córdoba" },
-      { name: "Martín", city: "Buenos Aires" },
-      { name: "Carla", city: "Rosario" },
-      { name: "Juan", city: "Salta" },
-      { name: "Florencia", city: "Mendoza" },
-      { name: "Diego", city: "Tucumán" },
-      { name: "María", city: "La Plata" },
-      { name: "Sofía", city: "Neuquén" },
-      { name: "Lucas", city: "Chaco" },
-      { name: "Antonella", city: "Mar del Plata" }
-    ];
-
-    const container = document.getElementById("notificationBox");
-    let index = 0;
-
-    function getRandomTime() {
-      const hour = Math.floor(Math.random() * 24);
-      const minute = Math.floor(Math.random() * 60);
-      return `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+    const whatsappBtn = document.querySelector('.whatsapp-button');
+    if(whatsappBtn) {
+      whatsappBtn.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+      });
+      whatsappBtn.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+      });
     }
-
-    function showNotification() {
-      const user = users[index];
-      const gender = Math.random() > 0.5 ? 'women' : 'men';
-      const avatar = `https://randomuser.me/api/portraits/thumb/${gender}/${Math.floor(Math.random() * 90)}.jpg`;
-      const time = getRandomTime();
-
-      container.innerHTML = `
-        <div class="notification-item">
-          <img src="${avatar}" alt="${user.name}">
-          <div>
-            <span><strong>${user.name}</strong> recibió su premio en ${user.city} 🎉</span>
-            <span class="notification-time">${time} hs</span>
-          </div>
-        </div>
-      `;
-
-      container.style.display = 'block';
-      container.classList.remove('fadeIn');
-      void container.offsetWidth;
-      container.classList.add('fadeIn');
-
-      index = (index + 1) % users.length;
-    }
-
-    setInterval(showNotification, 5000); // cada 5 segundos
-    showNotification(); // primera notificación
   </script>
 </body>
 </html>
