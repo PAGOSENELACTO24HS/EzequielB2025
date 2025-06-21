@@ -7,11 +7,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
+    fbq('init', '1375338700359986');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1375338700359986&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #e5f6ea; /* Verde claro tipo WhatsApp */
+      background-color: #e5f6ea;
       color: #075e54;
       display: flex;
       flex-direction: column;
@@ -20,16 +39,7 @@
       position: relative;
     }
 
-    header {
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    .logo-text {
-      color: #25D366;
-      font-weight: 700;
-      font-size: 24px;
-    }
+    .logo-text { color: #25D366; font-weight: 700; font-size: 24px; }
 
     hr {
       width: 100%;
@@ -38,29 +48,15 @@
       margin: 20px 0;
     }
 
-    .verified img {
-      width: 100px;
-      border-radius: 50%;
-      margin: 20px 0;
-    }
-
-    .verified h2 {
-      font-size: 20px;
-      margin: 10px 0;
-    }
-
-    .verified .green {
-      color: #25D366;
-      font-weight: 600;
-    }
+    .verified .green { color: #25D366; font-weight: 600; }
 
     .message {
       background: #dcf8c6;
       padding: 15px;
       border-radius: 10px;
       margin: 20px 0;
-      font-size: 16px;
       color: #075e54;
+      font-size: 16px;
     }
 
     .whatsapp-button {
@@ -76,13 +72,8 @@
       margin-bottom: 20px;
       font-size: 18px;
       box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-      border: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
       transition: all 0.3s ease;
-      z-index: 1;
-      min-width: 250px;
+      position: relative;
     }
 
     .whatsapp-button:hover {
@@ -90,10 +81,7 @@
       box-shadow: 0 0 15px #25D366, 0 0 25px rgba(37, 211, 102, 0.6);
     }
 
-    .whatsapp-button i {
-      margin-right: 10px;
-      font-size: 24px;
-    }
+    .whatsapp-button i { margin-right: 10px; font-size: 24px; }
 
     .clientes {
       background-color: #c3e6cd;
@@ -112,11 +100,6 @@
       margin-bottom: 10px;
       text-align: center;
       color: #075e54;
-    }
-
-    .trustpilot img {
-      margin-top: 5px;
-      max-width: 120px;
     }
 
     .footer {
@@ -139,30 +122,17 @@
       background-color: #fff;
       color: #075e54;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       font-size: 14px;
-      animation: slideIn 0.5s ease-out;
       z-index: 9999;
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
+      display: none;
+      animation: fadeIn 0.5s ease-out;
     }
 
     .notification-item {
       display: flex;
       align-items: center;
       padding: 10px;
-      border-bottom: 1px solid #dcf8c6;
-      animation: fadeIn 1s ease forwards;
     }
 
     .notification-item img {
@@ -178,39 +148,32 @@
     }
 
     @media (max-width: 600px) {
-      .notifications {
-        left: 10px;
-        width: 90%;
-      }
+      .notifications { left: 10px; width: 90%; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-text">WhatsApp Bonos</div>
-  </header>
-
+  <header><div class="logo-text">WhatsApp Bonos</div></header>
   <hr />
 
   <section class="verified">
-    <a href="https://wa.me/5491131630026" target="_blank">
+    <a href="https://wa.me/5491131630026" target="_blank" onclick="fbq('trackCustom', 'ClickWhatsApp')">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="50" height="50" />
     </a>
     <h2><b>Plataforma Verificada</b> ✅</h2>
     <p class="green">Casino de Confianza</p>
   </section>
 
-  <div class="message">
-    Te estamos conectando con nuestro equipo vía WhatsApp.
-  </div>
+  <div class="message">Te estamos conectando con nuestro equipo vía WhatsApp.</div>
 
-  <a class="whatsapp-button pulse" href="https://wa.me/5491131630026?text=Quiero%20el%20bono%20del%2020%25" target="_blank">
+  <a class="whatsapp-button" 
+     href="https://wa.me/5491131630026?text=Quiero%20el%20bono%20del%2020%25" 
+     target="_blank"
+     onclick="fbq('trackCustom', 'ClickWhatsApp')">
     <i class="fab fa-whatsapp"></i> ¡QUIERO MI USUARIO!
   </a>
 
-  <div class="clientes">
-    👥 +5.000 CLIENTES GANANDO todos los días
-  </div>
+  <div class="clientes">👥 +5.000 CLIENTES GANANDO todos los días</div>
 
   <div class="trustpilot">
     "Excelente" ⭐⭐⭐⭐⭐ Calificación 4.9/5 en Trustpilot<br/>
@@ -221,7 +184,8 @@
     🎁 BONO DEL 20% CON TU PRIMER CARGA 🎁 - ¡Solicítalo ahora por WhatsApp!
   </div>
 
-  <div class="notifications" id="notificationContainer"></div>
+  <!-- Notificación -->
+  <div class="notifications" id="notificationBox"></div>
 
   <script>
     const users = [
@@ -237,27 +201,31 @@
       { name: "Antonella", city: "Mar del Plata" }
     ];
 
-    const container = document.getElementById('notificationContainer');
-
+    const container = document.getElementById("notificationBox");
     let index = 0;
-    function showNextNotification() {
-      const user = users[index];
-      const notification = document.createElement('div');
-      notification.className = 'notification-item';
-      notification.innerHTML = `
-        <img src="https://randomuser.me/api/portraits/thumb/${Math.random() > 0.5 ? 'men' : 'women'}/${Math.floor(Math.random() * 90)}.jpg" alt="${user.name}">
-        <span><strong>${user.name}</strong> recibió su premio en ${user.city} 🎉</span>
-      `;
-      container.appendChild(notification);
 
-      if (container.children.length > 10) {
-        container.removeChild(container.firstChild);
-      }
+    function showNotification() {
+      const user = users[index];
+      const gender = Math.random() > 0.5 ? 'women' : 'men';
+      const avatar = `https://randomuser.me/api/portraits/thumb/${gender}/${Math.floor(Math.random() * 90)}.jpg`;
+
+      container.innerHTML = `
+        <div class="notification-item">
+          <img src="${avatar}" alt="${user.name}">
+          <span><strong>${user.name}</strong> recibió su premio en ${user.city} 🎉</span>
+        </div>
+      `;
+
+      container.style.display = 'block';
+      container.classList.remove('fadeIn');
+      void container.offsetWidth; // reinicia animación
+      container.classList.add('fadeIn');
 
       index = (index + 1) % users.length;
     }
 
-    setInterval(showNextNotification, 3000);
+    setInterval(showNotification, 4000); // muestra una cada 4 segundos
+    showNotification(); // inicia
   </script>
 </body>
 </html>
