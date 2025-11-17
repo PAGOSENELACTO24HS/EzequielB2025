@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WhatsApp Bonos</title>
+  <title>EZEQUIEL MVP</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -26,16 +26,85 @@
   </noscript>
   <!-- End Meta Pixel Code -->
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #e5fdf4;
-      color: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top, #0b0028, #000);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    /* efecto brillo casino */
+    text-shadow: 0 0 6px rgba(255,255,255,0.6), 0 0 12px rgba(0,255,255,0.4);
+  }
+
+  /* contenedor principal con borde neon */
+  .container {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(0,0,0,0.45);
+    border-radius: 15px;
+    padding: 25px;
+    border: 2px solid rgba(255, 0, 255, 0.7);
+    box-shadow: 
+      0 0 15px rgba(255, 0, 255, 0.6),
+      0 0 35px rgba(0, 255, 255, 0.3);
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+    font-weight: 900;
+    text-shadow: 
+      0 0 8px #ff00ff,
+      0 0 16px #00eaff,
+      0 0 32px #ffea00;
+  }
+
+  button, .btn {
+    width: 100%;
+    background: linear-gradient(90deg, #ff00ff, #00eaff);
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+    box-shadow: 
+      0 0 12px rgba(255, 0, 255, 0.7),
+      0 0 18px rgba(0, 255, 255, 0.6);
+    transition: 0.2s;
+  }
+
+  button:hover {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 18px rgba(255, 255, 0, 0.8),
+      0 0 36px rgba(0, 255, 255, 0.7);
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #ff00ff;
+    border-radius: 10px;
+    color: #fff;
+    margin: 8px 0 12px;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(255,0,255,0.4);
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #0ff;
+    box-shadow: 0 0 16px #00eaff;
+  }
+</style>
     }
 
     header {
@@ -44,7 +113,7 @@
     }
 
     .logo-text {
-      color: #075e54;
+      color: #D4AF37;
       font-weight: 700;
       font-size: 24px;
     }
@@ -52,7 +121,7 @@
     hr {
       width: 100%;
       border: none;
-      border-top: 1px solid #a2d5c6;
+      border-top: 1px solid #444;
       margin: 20px 0;
     }
 
@@ -72,22 +141,22 @@
     }
 
     .verified .green {
-      color: #128c7e;
+      color: #D4AF37;
       font-weight: 600;
     }
 
     .message {
-      background: #c0f2dc;
+      background: #2a2a2a;
       padding: 15px;
       border-radius: 10px;
       margin: 20px 0;
       font-size: 16px;
-      color: #000;
+      color: #fff;
     }
 
     .whatsapp-button {
-      background-color: #25D366;
-      color: #fff;
+      background-color: #D4AF37;
+      color: #1a1a1a;
       padding: 18px 30px;
       border-radius: 50px;
       font-weight: bold;
@@ -97,14 +166,14 @@
       justify-content: center;
       margin-bottom: 20px;
       font-size: 18px;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
       border: none;
       cursor: pointer;
       position: relative;
       overflow: hidden;
+      transition: all 0.3s ease;
       z-index: 1;
       min-width: 250px;
-      animation: glow 1.8s ease-in-out infinite;
     }
 
     .whatsapp-button::before {
@@ -114,7 +183,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #1ebe5d;
+      background-color: #bfa437;
       z-index: -1;
       transform: scaleX(0);
       transform-origin: right;
@@ -123,9 +192,9 @@
 
     .whatsapp-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 15px #25D366, 
-                  0 0 25px rgba(37, 211, 102, 0.6),
-                  0 0 35px rgba(37, 211, 102, 0.3);
+      box-shadow: 0 0 15px #D4AF37, 
+                  0 0 25px rgba(212, 175, 55, 0.6),
+                  0 0 35px rgba(212, 175, 55, 0.3);
     }
 
     .whatsapp-button:hover::before {
@@ -144,31 +213,23 @@
 
     @keyframes pulse {
       0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
       }
       70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
       }
       100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
       }
     }
 
-    @keyframes glow {
-      0% {
-        box-shadow: 0 0 10px #25D366, 0 0 20px #25D366, 0 0 30px #25D366;
-      }
-      50% {
-        box-shadow: 0 0 20px #1ebe5d, 0 0 30px #1ebe5d, 0 0 40px #1ebe5d;
-      }
-      100% {
-        box-shadow: 0 0 10px #25D366, 0 0 20px #25D366, 0 0 30px #25D366;
-      }
+    .whatsapp-button.pulse {
+      animation: pulse 2s infinite;
     }
 
     .clientes {
-      background-color: #a2d5c6;
-      color: #000;
+      background-color: #444;
+      color: #fff;
       padding: 12px 20px;
       border-radius: 30px;
       font-weight: 600;
@@ -178,11 +239,11 @@
     .trustpilot {
       font-size: 14px;
       padding: 8px 15px;
-      border: 1px dashed #5d9c8a;
+      border: 1px dashed #999;
       border-radius: 10px;
       margin-bottom: 10px;
       text-align: center;
-      color: #075e54;
+      color: #ccc;
     }
 
     .trustpilot img {
@@ -194,8 +255,8 @@
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: linear-gradient(to right, #128c7e, #25D366);
-      color: #fff;
+      background: linear-gradient(to right, #bfa437, #D4AF37);
+      color: #1a1a1a;
       text-align: center;
       padding: 10px;
       font-weight: bold;
@@ -220,13 +281,13 @@
 </head>
 <body>
   <header>
-    <div class="logo-text">EZEQUIEL BET LINEA 24HS</div>
+    <div class="logo-text">PAGOS EN EL ACTO LAS 24 HS</div>
   </header>
 
   <hr />
 
   <section class="verified">
-    <a href="https://wa.me/5491172454790" target="_blank" onclick="fbq('trackCustom', 'ClickWhatsApp')">
+    <a href="https://wa.me/5491135820287" target="_blank" onclick="fbq('trackCustom', 'ClickWhatsApp')">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="50" height="50" />
     </a>
     <h2> <b>Plataforma Verificada</b> ✅</h2>
@@ -237,15 +298,15 @@
     Te estamos conectando con nuestro equipo vía WhatsApp.
   </div>
 
-  <a class="whatsapp-button"
-     href="https://wa.me/5491172454790?text=Quiero%20el%20bono%20del%2020%25"
+  <a class="whatsapp-button pulse" 
+     href="https://wa.me/5491135820287?text=Quiero%20el%20bono%20del%2020%25" 
      target="_blank"
      onclick="fbq('trackCustom', 'ClickWhatsApp')">
-    <i class="fab fa-whatsapp"></i> ¡CLICK ACA Y RECLAMA TU BONO!
+    <i class="fab fa-whatsapp"></i> ¡QUIERO MI USUARIO!
   </a>
 
   <div class="clientes">
-    👥 +5000 CLIENTES GANANDO TODOS LOS DIAS 
+    👥 5.000 CLIENTES GANANDO todos los días
   </div>
 
   <div class="trustpilot">
